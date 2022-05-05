@@ -32,7 +32,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  List<String> titleList = ["高部","松本","山川","岡本"];
+  List<String> titleList = ["吉田MSTK","松本","山川","岡本"];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,10 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ListTile(
                   // ListTile の Ontapp メソッドがタップ時の処理
                   onTap: () {
+                    // 次のページに値渡しましょ。
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => NextPage()
+                            builder: (context) =>
+                                NextPage(titleList[i]) // 選択したRowの文字列の値をわたす 実装をした
                         )
                     );
                   },
